@@ -1,0 +1,143 @@
+body {
+  margin-left: 10em;
+  margin-top: 2em;
+  background-image: url(/assets/img/bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: 'Outfit', sans-serif;
+  color: white;
+}
+
+#logo {
+  width: 150px;
+}
+
+/* Fonts */
+
+h1 {
+  font-weight: 300;
+  font-size: 60px;
+  color: white;
+  line-height: 0.7em;
+}
+
+h3 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  font-size: 30px;
+  font-weight: 600;
+  color: #d20094;
+}
+h4 {
+  margin-bottom: 2em;
+}
+
+strong {
+  font-weight: 600;
+}
+
+.inter {
+  font-weight: 200;
+  font-size: 16px;
+  font-family: 'inter', sans-serif;
+}
+
+/* Header */
+header {
+  margin-bottom: 5em;
+}
+
+/* UL */
+ul {
+  margin-left: 1.5em;
+  margin-bottom: 5em;
+  line-height: 1.7em;
+}
+
+.checkbox,
+.button {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.checkbox-wrapper {
+}
+
+button {
+  margin-left: 30em;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 10px 0;
+  transition: 1s;
+  width: 180px;
+  border-style: none;
+  -webkit-box-shadow: 0px 0px 30px 10px rgba(0, 255, 255, 0.449);
+  -moz-box-shadow: 0px 0px 30px 10px rgba(0, 255, 255, 0.449);
+  box-shadow: 0px 0px 30px 10px rgba(0, 255, 255, 0.449);
+  background: rgb(0, 255, 255);
+  font-weight: 700;
+}
+
+button:hover {
+  color: rgb(255, 255, 255);
+  width: 190px;
+  background: rgb(0, 255, 255) none repeat scroll 0% 0% / auto padding-box;
+}
+
+.css-checkbox {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+#inputPreview {
+  margin-right: 10px;
+  display: inline-block;
+  gap: 20px;
+  justify-content: center;
+}
+.css-checkbox + label {
+  position: fixed;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+  align-items: center;
+  height: 16px;
+  color: rgb(252, 252, 252);
+}
+.css-checkbox + label::before {
+  content: ' ';
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 13px;
+  width: 14px;
+  height: 14px;
+  background-color: rgb(12, 16, 59);
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgb(255, 255, 255);
+  box-shadow: none;
+}
+.css-checkbox:checked + label::after {
+  content: ' ';
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjZjdmOGZmIiBkPSJNMTczLjg5OCA0MzkuNDA0bC0xNjYuNC0xNjYuNGMtOS45OTctOS45OTctOS45OTctMjYuMjA2IDAtMzYuMjA0bDM2LjIwMy0zNi4yMDRjOS45OTctOS45OTggMjYuMjA3LTkuOTk4IDM2LjIwNCAwTDE5MiAzMTIuNjkgNDMyLjA5NSA3Mi41OTZjOS45OTctOS45OTcgMjYuMjA3LTkuOTk3IDM2LjIwNCAwbDM2LjIwMyAzNi4yMDRjOS45OTcgOS45OTcgOS45OTcgMjYuMjA2IDAgMzYuMjA0bC0yOTQuNCAyOTQuNDAxYy05Ljk5OCA5Ljk5Ny0yNi4yMDcgOS45OTctMzYuMjA0LS4wMDF6Ii8+PC9zdmc+');
+  background-repeat: no-repeat;
+  background-size: 10px 10px;
+  background-position: center center;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0px;
+  left: 0px;
+  top: 0px;
+  text-align: center;
+  background-color: transparent;
+  font-size: 10px;
+  height: 16px;
+  width: 16px;
+}
