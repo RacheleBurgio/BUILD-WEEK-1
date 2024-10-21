@@ -1,0 +1,22 @@
+body {
+  background-color: black;
+}
+#timer {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-block: -7px;
+}
+
+#time_wrapper {
+  border: 15px solid white;
+  color: white;
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+}
+p {
+  text-align: center;
+}
+div p:first-child {
+  padding-top: 1rem;
+}
