@@ -1,103 +1,96 @@
-body{
-    background-image: url(./../bg.jpg);
-   
-    background-size: cover;
-    padding-top: 2em;
-    padding-bottom: 200px;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-.logoimmagine{
-    max-width: 12%;
-    padding-left: 7em;
-    margin-bottom: 2em;
-    margin-top: 1em;
+body {
+  background-image: url(../img/bg.jpg);
 
+  background-size: cover;
+  padding-top: 2em;
+  padding-bottom: 200px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
-h1{
-    text-align: center;
-    font-size: 60px;
-    color: white;
-    font-weight: bold;
-    font-family: "Outfit", sans-serif;
-    padding-bottom: 0.5em;
-
+.logoimmagine {
+  max-width: 12%;
+  padding-left: 7em;
+  margin-bottom: 2em;
+  margin-top: 1em;
+}
+h1 {
+  text-align: center;
+  font-size: 60px;
+  color: white;
+  font-weight: bold;
+  font-family: 'Outfit', sans-serif;
+  padding-bottom: 0.5em;
 }
 
-.fromZero{
-    text-align: center;
-    font-family: "Outfit", sans-serif;
-    color: rgb(189, 184, 184);
-    font-size: 30px;
+.fromZero {
+  text-align: center;
+  font-family: 'Outfit', sans-serif;
+  color: rgb(189, 184, 184);
+  font-size: 30px;
 }
 
-
-.stars{
-    padding-top: 2em;
-    text-align: center;
-    font-size: 40px;
-    color: aqua;
+.stars {
+  padding-top: 2em;
+  text-align: center;
+  font-size: 40px;
+  color: aqua;
 }
-#darkStar{
-    padding-top: 2em;
-    text-align: center;
-    font-size: 40px;
-    color: rgb(30, 42, 42);
-}
-
-.leaveUs{
-    padding-top: 3em;
-
-
-    text-align: center;
-    font-family: "Outfit", sans-serif;
-    color: rgb(189, 184, 184);
-    font-size: 30px;
+#darkStar {
+  padding-top: 2em;
+  text-align: center;
+  font-size: 40px;
+  color: rgb(30, 42, 42);
 }
 
+.leaveUs {
+  padding-top: 3em;
 
-.comment{
-   padding-top: 3em;
-   padding-right: 50em;
-   text-align: center;
-   font-size: 20px;
-   color: rgb(104, 103, 103);
-   background: none;
+  text-align: center;
+  font-family: 'Outfit', sans-serif;
+  color: rgb(189, 184, 184);
+  font-size: 30px;
 }
 
-
-
-form{
-    text-align: center;
-    padding-top: 3em;
+.comment {
+  padding-top: 3em;
+  padding-right: 50em;
+  text-align: center;
+  font-size: 20px;
+  color: rgb(104, 103, 103);
+  background: none;
 }
 
-input{
-    background: transparent;
-    border-bottom-color: purple;
-    border-bottom-width: 3px;
-    border-top-width: 0px;
-    border-left-width: 0px;
-    border-right-width: 0px;
-    text-align: left;
-    padding-left: 2.2em;
-    padding-bottom: 0.5em;
-    width: 70%; 
-    font-size: 18px;
-    font-family: "Outfit", sans-serif;
+form {
+  text-align: center;
+  padding-top: 3em;
 }
-.buttonForm{
-    text-align: center;
 
-    margin-top: 3em;
-    font-family: "Outfit", sans-serif;
-    padding-left: 2.8em;
-    padding-right: 2.8em;
-    padding-top: 0.8em;
-    padding-bottom: 0.8em;
-    background-color: #00FFFF;
-    font-weight: bold;
-    font-size: 20px;
-    box-shadow: 5px 5px 30px 5px #00FFFF;
-    border-color: #00FFFF;
+input {
+  background: transparent;
+  border-bottom-color: purple;
+  border-bottom-width: 3px;
+  border-top-width: 0px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  text-align: left;
+  padding-left: 2.2em;
+  padding-bottom: 0.5em;
+  width: 70%;
+  font-size: 18px;
+  font-family: 'Outfit', sans-serif;
+}
+.buttonForm {
+  text-align: center;
+
+  margin-top: 3em;
+  font-family: 'Outfit', sans-serif;
+  padding-left: 2.8em;
+  padding-right: 2.8em;
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  background-color: #00ffff;
+  font-weight: bold;
+  font-size: 20px;
+  box-shadow: 5px 5px 30px 5px #00ffff;
+  border-color: #00ffff;
 }
