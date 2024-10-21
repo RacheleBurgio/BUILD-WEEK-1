@@ -4,26 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/reset.css" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
     <title>Epicode Exam</title>
   </head>
   <body>
     <header>
-      <img src="./assets/img/epicode_logo.png" alt="epicode logo" />
-      <h2>EPICODE</h2>
+      <img id="logo" src="./assets/img/epicode_logo.png" alt="epicode logo" />
     </header>
     <main>
       <article>
-        <h1>Welcome to<br /><strong>your exam</strong></h1>
+        <h1>
+          Welcome to<br />
+          <strong>your exam</strong>
+        </h1>
       </article>
 
       <section>
         <h3>Instructions</h3>
-        <h4>
-          We don't expect most engineers to know the answers to all of these
+        <h4 class="inter">
+          We don't expect most engineers to know the answers to all of these<br />
           questions, so don't worry if you're unsure of a few of them.
         </h4>
-        <ul>
+        <ul class="inter">
           <li>
             Each question is <strong>timed</strong> and can only be
             <strong>answered once.</strong>
@@ -32,20 +34,45 @@
             Changing browser tab or oliening other windows will
             <strong>invalidate the question.</strong>
           </li>
-          <li>his exam will take approx. <strong>0-5 minutes.</strong></li>
+          <li>This exam will take approx. <strong>0-5 minutes.</strong></li>
         </ul>
       </section>
+      <form>
+        <div id="inputPreview">
+          <input
+            name="cssCheckbox"
+            id="demo_opt_1"
+            type="checkbox"
+            class="css-checkbox"
+            required
+          />
+          <label for="demo_opt_1"
+            >I promise to answer myself without help from anyone</label
+          >
+        </div>
 
-      <section>
-        <input type="checkbox" /> I promise to answer myself without help from
-        anyone
-      </section>
-
-      <div>
-        <a href="#">
-          <button>PROCEED</button>
-        </a>
-      </div>
+        <div class="button">
+          <button type="submit">PROCEED</button>
+        </div>
+      </form>
     </main>
   </body>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap');
+  </style>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+    rel="stylesheet"
+  />
 </html>
