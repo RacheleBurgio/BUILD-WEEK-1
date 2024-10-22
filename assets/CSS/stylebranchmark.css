@@ -47,15 +47,17 @@ button:hover {
   transition: 0.7s;
 }
 
+h4 {
+  text-align: center;
+  margin-top: 6rem;
+}
+
 /* TIMER */
 
-body {
-  background-color: black;
-}
 #timer {
   font-size: 2rem;
   text-align: center;
-  margin-block: -7px;
+  margin-block: -5px;
 }
 
 #time_wrapper {
@@ -71,7 +73,7 @@ p {
   text-align: center;
 }
 div p:first-child {
-  padding-top: 1rem;
+  padding-top: 2rem;
 }
 
 /* Footer */
