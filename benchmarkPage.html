@@ -11,6 +11,12 @@
   <body>
     <header>
       <img src="../assets/img/epicode_logo.png" alt="Logo Epicode" />
+      <!--questo è il timer  -->
+      <div id="time_wrapper">
+        <p>SECONDS</p>
+        <div id="timer"></div>
+        <p>REMAINING</p>
+      </div>
     </header>
     <main>
       <section>
@@ -19,14 +25,7 @@
           <span id="bold">checkbox in HTML?</span>
         </h1>
       </section>
-      <section>
-        <!--questo è il tiemr  -->
-        <div id="time_wrapper">
-          <p>secondi</p>
-          <div id="timer"></div>
-          <p>rimanenti</p>
-        </div>
-      </section>
+
       <section id="bottoni">
         <button class="risposta">&lt;input type="check"&gt;</button>
         <button class="risposta">&lt;input type="checkbox"&gt;</button><br />
@@ -34,6 +33,9 @@
         <button class="risposta">&lt;input type="button"&gt;</button>
       </section>
     </main>
-    <footer><h4>QUESTION 1 / 10</h4></footer>
+    <footer>
+      <h4>QUESTION 1 <strong>/ 10</strong></h4>
+    </footer>
   </body>
+  <script src="/assets/script/benchmarkScript.js"></script>
 </html>
