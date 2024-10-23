@@ -1,10 +1,24 @@
+const reverse = function () {
+  let circle = document.getElementById('time_wrapper')
+  let i = 60
+  setInterval(function () {
+    if (i > 0) {
+      circle.classList.add('color')
+    }
+    i--
+  }, 1000)
+}
+reverse()
+
+function calculatePercentage(correct, total) {
+  return (correct / total) * 100
+}
+
 function getResultMessage(percentage) {
-  if (percentage > 50) {
-    return "Congratulations, you passed the exam. We'll send you the certificate in a few minutes. Check your email (including promotions/spam folder)."
-  } else if (percentage < 50) {
-    return "Unfortunately, you didn't pass the exam. Try again."
+  if (percentage >= 50) {
+    return "Congratulations, you passed the exam. We'll send you the certificate in few minutes. Check your email (including promotions/spam folder)."
   } else {
-    return 'You scored exactly 50%. Please review the material and try again.'
+    return "Unfortunately, you didn't pass the exam. Try again."
   }
 }
 
@@ -19,22 +33,31 @@ window.onload = function () {
   canvas.height = 250
 
   let ctx = canvas.getContext('2d')
+  let correctAnswers = 4
+  let totalQuestions = 6
+  let wrongAnswers = totalQuestions - correctAnswers
+  let correctPercentage = calculatePercentage(
+    correctAnswers,
+    totalQuestions
+  ).toFixed(1)
+  let wrongPercentage = (100 - correctPercentage).toFixed(1)
 
-  let correctAnswers = 3
-  let totalQuestions = 4
-  let percentage = calculatePercentage(correctAnswers, totalQuestions)
+  document.getElementById('correctPercentage').textContent =
+    correctPercentage + '%'
+  document.getElementById('correctCount').textContent =
+    correctAnswers + '/' + totalQuestions + ' questions'
+  document.getElementById('wrongPercentage').textContent = wrongPercentage + '%'
+  document.getElementById('wrongCount').textContent =
+    wrongAnswers + '/' + totalQuestions + ' questions'
 
   let myDoughnutChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
-      labels: ['Risposte corrette', 'Non risposte'],
+      labels: ['Correct answers', 'Wrong answers'],
       datasets: [
         {
-          data: [percentage, 100 - percentage],
-          backgroundColor: [
-            'rgba(75, 192, 192, 1)',
-            'rgba(200, 200, 200, 0.2)',
-          ],
+          data: [correctAnswers, wrongAnswers],
+          backgroundColor: ['rgba(75, 192, 192, 1)', 'rgba(255, 99, 132, 0.7)'],
           borderWidth: 1,
         },
       ],
@@ -55,7 +78,7 @@ window.onload = function () {
           ctx.font = fontSize + 'em sans-serif'
           ctx.textBaseline = 'middle'
 
-          let text = getResultMessage(percentage),
+          let text = getResultMessage(correctPercentage),
             textX = Math.round((width - ctx.measureText(text).width) / 2),
             textY = height / 2
 
@@ -65,8 +88,4 @@ window.onload = function () {
       },
     },
   })
-}
-
-function calculatePercentage(correctAnswers, totalQuestions) {
-  return (correctAnswers / totalQuestions) * 100
 }
