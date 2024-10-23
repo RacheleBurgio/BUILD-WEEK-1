@@ -1,15 +1,3 @@
-const reverse = function () {
-  let circle = document.getElementById('time_wrapper')
-  let i = 60
-  setInterval(function () {
-    if (i > 0) {
-      circle.classList.add('color')
-    }
-    i--
-  }, 1000)
-}
-reverse()
-
 function calculatePercentage(correct, total) {
   return (correct / total) * 100
 }

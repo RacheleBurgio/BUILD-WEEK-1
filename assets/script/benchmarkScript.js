@@ -1,23 +1,3 @@
-// TIMER
-
-const timer = function () {
-  let timer = document.getElementById('timer')
-  let i = 60
-
-  setInterval(function () {
-    if (i > 0) {
-      timer.innerHTML = i
-    } else if (i === 0) {
-      timer.innerHTML = '0'
-    } else {
-      clearInterval(countdown)
-    }
-    i--
-  }, 1000)
-}
-
-timer()
-
 const questions = [
   {
     category: 'Science: Computers',
@@ -116,75 +96,111 @@ const questions = [
 
 let currentQuestionIndex = 0
 let correctAnswers = 0
+let timerInterval
+let timeLeft = 60
 
-window.onload = function () {
-  const questionTitle = document.querySelector('h1')
-  const buttons = document.querySelectorAll('#bottoni button')
-  const footerText = document.querySelector('footer h4')
+const load = () => {
+  window.onload = function () {
+    const questionTitle = document.querySelector('h1')
+    const buttons = document.querySelectorAll('#bottoni button')
+    const footerText = document.querySelector('footer h4')
+    const timerElement = document.getElementById('timer')
 
-  function shuffleAnswers(question) {
-    return question.incorrect_answers
-      .concat(question.correct_answer)
-      .sort(function () {
-        return Math.random() - 0.5
+    const shuffleAnswers = (question) => {
+      return question.incorrect_answers
+        .concat(question.correct_answer)
+        .sort(() => Math.random() - 0.5)
+    }
+
+    const loadQuestion = (index) => {
+      const question = questions[index]
+      const shuffledAnswers = shuffleAnswers(question)
+
+      questionTitle.textContent =
+        'Domanda ' + (index + 1) + ': ' + question.question
+      footerText.innerHTML =
+        'QUESTION ' +
+        (index + 1) +
+        ' <strong>/ ' +
+        questions.length +
+        '</strong>'
+
+      buttons.forEach((button, i) => {
+        button.style.visibility = 'visible'
+        button.textContent = shuffledAnswers[i]
+        if (button.textContent === '') {
+          button.style.visibility = 'hidden'
+        }
+        button.onclick = () => {
+          handleAnswerSelection(shuffledAnswers[i] === question.correct_answer)
+        }
       })
-  }
 
-  function loadQuestion(index) {
-    const question = questions[index]
-    const shuffledAnswers = shuffleAnswers(question)
-
-    questionTitle.textContent =
-      'Domanda ' + (index + 1) + ': ' + question.question
-    footerText.innerHTML =
-      'QUESTION ' + (index + 1) + ' <strong>/ ' + questions.length + '</strong>'
-
-    buttons.forEach(function (button, i) {
-      //a tutti i button do la visibilita
-      button.style.visibility = 'visible'
-      button.textContent = shuffledAnswers[i]
-      //qui, se il testo del bottone è uguale a niente "", vuol dire che non c'è una risposta dentro, e quindi posso non farlo vedere a schermo
-      if (button.textContent === '') {
-        button.style.visibility = 'hidden'
-      }
-      button.onclick = function () {
-        handleAnswerSelection(shuffledAnswers[i] === question.correct_answer)
-      }
-    })
-  }
-
-  function handleAnswerSelection(isCorrect) {
-    if (isCorrect) {
-      correctAnswers++
+      resetTimer()
     }
 
-    currentQuestionIndex++
+    const handleAnswerSelection = (isCorrect) => {
+      if (isCorrect) {
+        correctAnswers++
+      }
 
-    if (currentQuestionIndex < questions.length) {
-      loadQuestion(currentQuestionIndex)
-    } else {
-      showFinalScore()
+      currentQuestionIndex++
+
+      if (currentQuestionIndex < questions.length) {
+        loadQuestion(currentQuestionIndex)
+      } else {
+        showFinalScore()
+      }
     }
+
+    const showFinalScore = () => {
+      clearInterval(timerInterval)
+      questionTitle.textContent = 'Quiz completato!'
+      footerText.innerHTML =
+        'Hai risposto correttamente a ' +
+        correctAnswers +
+        ' su ' +
+        questions.length +
+        ' domande.'
+
+      buttons.forEach((button) => {
+        button.style.display = 'none'
+      })
+
+      nextButton.style.display = 'block'
+      nextButton.addEventListener('click', () => {
+        window.location.href = 'resultpage.html'
+      })
+    }
+
+    const resetTimer = () => {
+      clearInterval(timerInterval)
+      timeLeft = 60
+      timerElement.innerHTML = timeLeft
+
+      timerInterval = setInterval(() => {
+        if (timeLeft > 0) {
+          timeLeft--
+          timerElement.innerHTML = timeLeft
+        } else {
+          clearInterval(timerInterval)
+          alert('Tempo scaduto! Passiamo alla prossima domanda.')
+          currentQuestionIndex++
+          loadNextQuestion()
+        }
+      }, 1000)
+    }
+
+    loadQuestion(currentQuestionIndex)
   }
-
-  function showFinalScore() {
-    questionTitle.textContent = 'Quiz completato!'
-    footerText.innerHTML =
-      'Hai risposto correttamente a ' +
-      correctAnswers +
-      ' su ' +
-      questions.length +
-      ' domande.'
-
-    buttons.forEach(function (button) {
-      button.style.display = 'none'
-    })
-
-    nextButton.style.display = 'block'
-    nextButton.addEventListener('click', () => {
-      window.location.href = 'resultpage.html'
-    })
-  }
-
-  loadQuestion(currentQuestionIndex)
 }
+
+const loadNextQuestion = () => {
+  if (currentQuestionIndex < questions.length) {
+    loadQuestion(currentQuestionIndex)
+  } else {
+    showFinalScore()
+  }
+}
+
+load()
