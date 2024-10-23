@@ -175,9 +175,7 @@ window.onload = function () {
     })
 
     nextButton.style.display = 'block'
-    nextButton.onclick = function () {
-      
-    }
+    nextButton.onclick = function () {}
     
   }
 
