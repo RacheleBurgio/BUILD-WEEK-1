@@ -184,7 +184,14 @@ window.onload = function () {
     buttons.forEach(function (button) {
       button.style.display = 'none'
     })
+
+    nextButton.style.display = 'block'
+    nextButton.onclick = function () {
+      
+    }
+    
   }
 
   loadQuestion(currentQuestionIndex)
 }
+
