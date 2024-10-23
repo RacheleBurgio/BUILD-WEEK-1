@@ -3,8 +3,8 @@ body {
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url(bg.jpg);
-  font-family: "Outfit", sans-serif;
+  background-image: url(../img/bg.jpg);
+  font-family: 'Outfit', sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -28,18 +28,17 @@ header img {
   margin-bottom: 1em;
 }
 
-
-
-
 section {
   display: inline-block;
   vertical-align: middle;
   text-align: center;
-  width: 30%; 
-  margin: 1.2em
+  width: 30%;
+  margin: 1.2em;
 }
 
-h1, h2, p {
+h1,
+h2,
+p {
   margin: 0;
 }
 
@@ -57,25 +56,24 @@ p {
 }
 
 canvas {
-   margin: 0 auto; 
-  width: 300px; 
-  height: 300px; 
+  margin: 0 auto;
+  width: 300px;
+  height: 300px;
 }
-
 
 #rateus {
   background-color: transparent;
-  width: 150px; 
-  height: 40px; 
+  width: 150px;
+  height: 40px;
   font-weight: bold;
   border: 2px solid white;
   color: white;
-  font-family: "Outfit", sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 18px;
   position: absolute;
   left: 49%;
   top: 50%;
-  transform: translate(-50%, -50%); 
-  line-height: 40px; 
+  transform: translate(-50%, -50%);
+  line-height: 40px;
   margin-top: 6em;
 }
