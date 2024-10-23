@@ -7,8 +7,13 @@ const timer = function () {
   setInterval(function () {
     if (i > 0) {
       timer.innerHTML = i
+
+  
+
     } else if (i === 0) {
       timer.innerHTML = '0'
+
+
     } else {
       clearInterval(countdown)
     }
@@ -140,7 +145,13 @@ window.onload = function () {
       'QUESTION ' + (index + 1) + ' <strong>/ ' + questions.length + '</strong>'
 
     buttons.forEach(function (button, i) {
+      //a tutti i button do la visibilita
+      button.style.visibility = "visible";
       button.textContent = shuffledAnswers[i]
+      //qui, se il testo del bottone è uguale a niente "", vuol dire che non c'è una risposta dentro, e quindi posso non farlo vedere a schermo
+      if(button.textContent === ""){
+        button.style.visibility = "hidden";
+      }
       button.onclick = function () {
         handleAnswerSelection(shuffledAnswers[i] === question.correct_answer)
       }
