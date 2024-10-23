@@ -116,5 +116,11 @@ const questions = [
 
 window.onload = function () {
   let title = document.getElementById("title");
-  let button = document.querySelectorAll("bottoni");
+  let button = document.getElementById("risposta");
+
+  const titolo = function () {
+    for (let i = 0; i < questions.length; i++) {
+      // let firtTitle = questions[i].question;
+    }
+  };
 };
