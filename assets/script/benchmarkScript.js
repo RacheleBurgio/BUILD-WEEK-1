@@ -138,7 +138,13 @@ const load = () => {
 
       resetTimer()
     }
-
+    const loadNextQuestion = () => {
+      if (currentQuestionIndex < questions.length) {
+        loadQuestion(currentQuestionIndex)
+      } else {
+        showFinalScore()
+      }
+    }
     const handleAnswerSelection = (isCorrect) => {
       if (isCorrect) {
         correctAnswers++
@@ -192,14 +198,6 @@ const load = () => {
     }
 
     loadQuestion(currentQuestionIndex)
-  }
-}
-
-const loadNextQuestion = () => {
-  if (currentQuestionIndex < questions.length) {
-    loadQuestion(currentQuestionIndex)
-  } else {
-    showFinalScore()
   }
 }
 
