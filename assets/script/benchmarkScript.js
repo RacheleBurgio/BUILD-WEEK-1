@@ -161,12 +161,19 @@ const load = () => {
 
     const showFinalScore = () => {
       clearInterval(timerInterval)
+      const totalQuestions = questions.length
+      const scorePercentage = (correctAnswers / totalQuestions) * 100
+
+      localStorage.setItem('correctAnswers', correctAnswers)
+      localStorage.setItem('totalQuestions', totalQuestions)
+      localStorage.setItem('scorePercentage', scorePercentage.toFixed(2))
+
       questionTitle.textContent = 'Quiz completato!'
       footerText.innerHTML =
         'Hai risposto correttamente a ' +
         correctAnswers +
         ' su ' +
-        questions.length +
+        totalQuestions +
         ' domande.'
 
       buttons.forEach((button) => {

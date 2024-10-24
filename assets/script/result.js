@@ -1,28 +1,40 @@
-function calculatePercentage(correct, total) {
+const calculatePercentage = (correct, total) => {
   return (correct / total) * 100
 }
 
-function getResultMessage(percentage) {
+const getResultMessage = (percentage) => {
   if (percentage >= 50) {
-    return "Congratulations, you passed the exam. We'll send you the certificate in few minutes. Check your email (including promotions/spam folder)."
+    return "Congratulations, you passed the exam. We'll send you the certificate in a few minutes. Check your email (including promotions/spam folder)."
   } else {
     return "Unfortunately, you didn't pass the exam. Try again."
   }
 }
 
-window.onload = function () {
+const getCertificateMessage = (percentage) => {
+  if (percentage >= 50) {
+    return "We'll send you the certificate soon. Check your email!"
+  } else {
+    return 'Try again next time!'
+  }
+}
+
+window.onload = () => {
   if (typeof Chart === 'undefined') {
-    console.error('Chart.js non è stato caricato correttamente.')
+    console.error('Chart.js was not loaded correctly.')
     return
   }
 
-  const canvas = document.getElementById('myDoughnutChart')
-  canvas.width = 250
-  canvas.height = 250
+  let correctAnswers = localStorage.getItem('correctAnswers')
+  let totalQuestions = localStorage.getItem('totalQuestions')
 
-  let ctx = canvas.getContext('2d')
-  let correctAnswers = 4
-  let totalQuestions = 6
+  if (!correctAnswers || !totalQuestions) {
+    correctAnswers = 0
+    totalQuestions = 1
+  } else {
+    correctAnswers = Number(correctAnswers)
+    totalQuestions = Number(totalQuestions)
+  }
+
   let wrongAnswers = totalQuestions - correctAnswers
   let correctPercentage = calculatePercentage(
     correctAnswers,
@@ -37,6 +49,11 @@ window.onload = function () {
   document.getElementById('wrongPercentage').textContent = wrongPercentage + '%'
   document.getElementById('wrongCount').textContent =
     wrongAnswers + '/' + totalQuestions + ' questions'
+
+  const canvas = document.getElementById('myDoughnutChart')
+  canvas.width = 250
+  canvas.height = 250
+  let ctx = canvas.getContext('2d')
 
   let myDoughnutChart = new Chart(ctx, {
     type: 'doughnut',
@@ -57,7 +74,7 @@ window.onload = function () {
         legend: {
           display: true,
         },
-        beforeDraw: function (chart) {
+        beforeDraw: (chart) => {
           let width = chart.width,
             height = chart.height,
             ctx = chart.ctx
@@ -66,11 +83,20 @@ window.onload = function () {
           ctx.font = fontSize + 'em sans-serif'
           ctx.textBaseline = 'middle'
 
-          let text = getResultMessage(correctPercentage),
-            textX = Math.round((width - ctx.measureText(text).width) / 2),
-            textY = height / 2
+          let mainText = getResultMessage(correctPercentage),
+            mainTextX = Math.round(
+              (width - ctx.measureText(mainText).width) / 2
+            ),
+            mainTextY = height / 2 - 20
 
-          ctx.fillText(text, textX, textY)
+          let subText = getCertificateMessage(correctPercentage),
+            subTextX = Math.round((width - ctx.measureText(subText).width) / 2),
+            subTextY = height / 2 + 10
+
+          ctx.fillStyle = 'white'
+          ctx.fillText(mainText, mainTextX, mainTextY)
+          ctx.font = (height / 200).toFixed(2) + 'em Arial'
+          ctx.fillText(subText, subTextX, subTextY)
           ctx.save()
         },
       },
