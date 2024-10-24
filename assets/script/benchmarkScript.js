@@ -187,7 +187,6 @@ const load = () => {
       })
     }
 
-    // Calcoli per il cerchio del timer
     const radius = circle.r.baseVal.value
     const circonferenza = 2 * Math.PI * radius
     circle.style.strokeDasharray = `${circonferenza} ${circonferenza}`
@@ -200,17 +199,16 @@ const load = () => {
 
     const resetTimer = () => {
       clearInterval(timerInterval)
-      timeLeft = 60 // Tempo totale
-      const totalTime = timeLeft // Memorizza il tempo totale
+      timeLeft = 60
+      const totalTime = timeLeft
       timerElement.innerHTML = timeLeft
-      setProgress(100) // Inizializza il progresso al 100%
+      setProgress(100)
 
       timerInterval = setInterval(() => {
         if (timeLeft > 0) {
           timeLeft--
           timerElement.innerHTML = timeLeft
 
-          // Calcola la percentuale rimanente e aggiorna il cerchio
           const progressPercentage = (timeLeft / totalTime) * 100
           setProgress(progressPercentage)
         } else {
