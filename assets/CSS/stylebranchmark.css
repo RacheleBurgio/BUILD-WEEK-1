@@ -1,13 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 body {
   background-image: url(../img/bg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   color: white;
-  font-family: "inter", sans-serif;
+  font-family: 'inter', sans-serif;
   font-size: 14px;
+  margin: 0;
+  padding: 0;
 }
 
 header > img {
@@ -19,13 +21,15 @@ header > img {
 
 h1 {
   margin: 50px 0;
-  font-family: "Outfit", sans-serif;
+  font-family: 'Outfit', sans-serif;
   text-align: center;
   font-size: 60px;
 }
+
 #bold {
   font-weight: bold;
 }
+
 #bottoni {
   text-align: center;
 }
@@ -53,47 +57,65 @@ h4 {
 }
 
 /* TIMER */
-
-#timer {
-  font-size: 2rem;
-  text-align: center;
-  margin-block: -5px;
-}
-
-#time_wrapper {
-  border: 15px solid rgba(255, 255, 255, 0.162);
-  color: rgb(255, 255, 255);
-  border-radius: 50%;
-  width: 6rem;
-  height: 6rem;
-  margin-left: 110em;
-}
-#second_time_wrapper {
-  border: 15px solid green;
-  border-radius: 50%;
-  width: 6rem;
-  height: 6rem;
-  margin-left: 110em;
+#container-timer {
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 10%;
+  top: 3%;
 }
-p {
+
+.progress-ring {
+  position: relative;
+}
+
+.progress-ring-background {
+  stroke: rgba(231, 231, 231, 0.438);
+  stroke-width: 10;
+  fill: transparent;
+}
+
+.progress-ring-circle {
+  stroke: #d20094; /* Colore del cerchio di progresso */
+  stroke-width: 12;
+  fill: transparent;
+  transition: stroke-dashoffset 1s linear;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+#Timer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.timer-text {
   text-align: center;
+  color: white;
 }
-div p:first-child {
-  padding-top: 1rem;
+
+.timer-text span {
+  display: block;
 }
 
 /* Footer */
 footer {
-  font-family: "inter", sans-serif;
+  font-family: 'inter', sans-serif;
   font-size: 1.2em;
   text-align: center;
   margin-top: 4em;
 }
+
 footer strong {
   color: #d20094;
   font-weight: bold;
 }
+
 #nextButton {
   display: block;
   color: rgb(30, 42, 42);

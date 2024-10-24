@@ -4,70 +4,42 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/reset.css" />
-    <link rel="stylesheet" href="./assets/css/welcomePageStyle.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
-    <title>Epicode Exam</title>
+    <link rel="stylesheet" href="./assets/css/stylebranchmark.css" />
+
+    <title>Benchmark</title>
   </head>
   <body>
     <header>
-      <img id="logo" src="./assets/img/epicode_logo.png" alt="epicode logo" />
+      <img src="../assets/img/epicode_logo.png" alt="Logo Epicode" />
+      <!-- Timer con il cerchio di progressione -->
+      <div id="container-timer">
+        <svg class="progress-ring" width="120" height="120">
+          <circle class="progress-ring-background" r="50" cx="60" cy="60" />
+          <circle class="progress-ring-circle" r="50" cx="60" cy="60" />
+        </svg>
+        <p id="Timer" class="timer-text">
+          <span id="rimanenti">Secondi</span>
+          <span id="seconds">60</span>
+          <span id="rimanenti">rimanenti</span>
+        </p>
+      </div>
     </header>
     <main>
-      <article>
-        <h1>
-          Welcome to<br />
-          <strong>your exam</strong>
-        </h1>
-      </article>
-
       <section>
-        <h3>Instructions</h3>
-        <h4 class="inter">
-          We don't expect most engineers to know the answers to all of these<br />
-          questions, so don't worry if you're unsure of a few of them.
-        </h4>
-        <ul class="inter">
-          <li>
-            Each question is <strong>timed</strong> and can only be
-            <strong>answered once.</strong>
-          </li>
-          <li>
-            Changing browser tab or oliening other windows will
-            <strong>invalidate the question.</strong>
-          </li>
-          <li>This exam will take approx. <strong>0-5 minutes.</strong></li>
-        </ul>
+        <h1></h1>
       </section>
-      <form>
-        <div id="inputPreview">
-          <input
-            name="cssCheckbox"
-            id="demo_opt_1"
-            type="checkbox"
-            class="css-checkbox"
-            required
-          />
-          <label for="demo_opt_1"
-            >I promise to answer myself without help from anyone</label
-          >
-        </div>
 
-        <div class="button">
-          <button id="bottoneCarino">PROCEED</button>
-        </div>
-      </form>
+      <section id="bottoni">
+        <button id="risposta"></button>
+        <button id="risposta"></button><br />
+        <button id="risposta"></button>
+        <button id="risposta"></button>
+      </section>
     </main>
-    <script src="./assets/script/welcomePage.js"></script>
+    <footer>
+      <button id="nextButton" style="display: none">Next</button>
+      <h4>QUESTION 1 <strong>/ 10</strong></h4>
+    </footer>
   </body>
+  <script src="assets/script/benchmarkScript.js"></script>
 </html>
