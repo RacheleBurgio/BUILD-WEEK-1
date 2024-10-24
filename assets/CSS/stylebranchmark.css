@@ -12,8 +12,8 @@ body {
 
 header > img {
   width: 150px;
-  margin-left: 10em;
-  margin-top: 40px;
+  margin-left: 11.4em;
+  margin-top: 32px;
   margin-bottom: 40px;
 }
 
@@ -66,16 +66,15 @@ h4 {
   border-radius: 50%;
   width: 6rem;
   height: 6rem;
-  margin-left: 100em;
+  margin-left: 110em;
 }
 #second_time_wrapper {
   border: 15px solid green;
   border-radius: 50%;
   width: 6rem;
   height: 6rem;
-  margin-left: 100em;
+  margin-left: 110em;
   position: absolute;
-  transition: 3s;
 }
 p {
   text-align: center;

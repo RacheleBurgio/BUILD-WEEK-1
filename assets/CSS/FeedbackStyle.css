@@ -8,23 +8,22 @@ body {
   background-position: center;
 }
 .logoimmagine {
-  max-width: 12%;
-  padding-left: 7em;
-  margin-bottom: 2em;
-  margin-top: 1em;
+  width: 150px;
+  margin-left: 10em;
+  margin-bottom: 40px;
 }
 h1 {
   text-align: center;
   font-size: 60px;
   color: white;
   font-weight: bold;
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   padding-bottom: 0.5em;
 }
 
 .fromZero {
   text-align: center;
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   color: rgb(189, 184, 184);
   font-size: 30px;
 }
@@ -47,7 +46,7 @@ h1 {
   padding-top: 3em;
 
   text-align: center;
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   color: rgb(189, 184, 184);
   font-size: 30px;
 }
@@ -78,13 +77,14 @@ input {
   padding-bottom: 0.5em;
   width: 70%;
   font-size: 18px;
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
+  color: white;
 }
 #buttonForm {
   text-align: center;
 
   margin-top: 3em;
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   padding-left: 2.8em;
   padding-right: 2.8em;
   padding-top: 0.8em;
@@ -94,4 +94,5 @@ input {
   font-size: 20px;
   box-shadow: 5px 5px 30px 5px #00ffff;
   border-color: #00ffff;
+  cursor: pointer;
 }

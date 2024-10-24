@@ -4,7 +4,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url(../img/bg.jpg);
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -13,6 +13,9 @@ body {
 
 header img {
   width: 150px;
+  margin-left: 10em;
+  margin-top: 32px;
+  margin-bottom: 40px;
 }
 
 #results {
@@ -68,7 +71,7 @@ canvas {
   font-weight: bold;
   border: 2px solid white;
   color: white;
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: 18px;
   position: absolute;
   left: 49%;
