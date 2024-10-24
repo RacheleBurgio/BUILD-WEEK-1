@@ -1,8 +1,8 @@
-function calculatePercentage(correct, total) {
+const calculatePercentage = (correct, total) => {
   return (correct / total) * 100
 }
 
-function getResultMessage(percentage) {
+const getResultMessage = (percentage) => {
   if (percentage >= 50) {
     return "Congratulations, you passed the exam. We'll send you the certificate in a few minutes. Check your email (including promotions/spam folder)."
   } else {
@@ -10,7 +10,7 @@ function getResultMessage(percentage) {
   }
 }
 
-function getCertificateMessage(percentage) {
+const getCertificateMessage = (percentage) => {
   if (percentage >= 50) {
     return "We'll send you the certificate soon. Check your email!"
   } else {
@@ -18,7 +18,7 @@ function getCertificateMessage(percentage) {
   }
 }
 
-window.onload = function () {
+window.onload = () => {
   if (typeof Chart === 'undefined') {
     console.error('Chart.js was not loaded correctly.')
     return
@@ -74,7 +74,7 @@ window.onload = function () {
         legend: {
           display: true,
         },
-        beforeDraw: function (chart) {
+        beforeDraw: (chart) => {
           let width = chart.width,
             height = chart.height,
             ctx = chart.ctx
