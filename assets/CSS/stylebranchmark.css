@@ -66,8 +66,28 @@ h4 {
   top: 3%;
 }
 
+<<<<<<< Updated upstream
 .progress-ring {
   position: relative;
+=======
+#time_wrapper {
+  border: 15px solid rgba(255, 255, 255, 0.162);
+  color: rgb(255, 255, 255);
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+
+  margin-left: 100em;
+}
+#second_time_wrapper {
+  border: 15px solid green;
+  color: green;
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+  position: absolute;
+  margin-left: 100em;
+>>>>>>> Stashed changes
 }
 
 .progress-ring-background {
